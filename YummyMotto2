@@ -1,0 +1,23 @@
+public class YummyMotto2 {
+
+    public static void main(String[] args) {
+        String motto = "Yummy makes the food that makes it a party.";
+        
+        // Print top border
+        for (int i = 0; i < motto.length() + 4; i++) {
+            System.out.print("*");
+        }
+        System.out.println(); 
+        
+        // Print motto with side borders
+        System.out.print("* ");
+        System.out.print(motto);
+        System.out.println(" *"); 
+        
+        // Print bottom border
+        for (int i = 0; i < motto.length() + 4; i++) {
+            System.out.print("*");
+        }
+        System.out.println(); 
+    }
+}
