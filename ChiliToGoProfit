@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class ChiliToGoProfit {
+
+    public static void main(String[] args) {
+        // Initialize Scanner for user input
+        Scanner input = new Scanner(System.in);
+
+        // Cost per meal
+        double adultCost = 4.35;
+        double childCost = 3.10;
+
+        // Selling price per meal
+        double adultPrice = 7.00;
+        double childPrice = 4.00; 
+
+        // Get number of adult meals ordered
+        System.out.print("Enter number of adult meals ordered >> ");
+        int numAdultMeals = input.nextInt();
+
+        // Get number of child meals ordered
+        System.out.print("Enter number of child meals ordered >> ");
+        int numChildMeals = input.nextInt();
+
+        // Calculate profit from adult meals
+        double adultProfit = (adultPrice - adultCost) * numAdultMeals;
+
+        // Calculate profit from child meals
+        double childProfit = (childPrice - childCost) * numChildMeals;
+
+        // Calculate grand total profit
+        double grandTotalProfit = adultProfit + childProfit;
+
+        // Output the results with proper formatting
+        System.out.println("\n" + numAdultMeals + " adult meals were ordered at $" + adultPrice + " each.");
+        System.out.println("Total adult meal profit: $" + String.format("%.2f", adultProfit));
+
+        System.out.println(numChildMeals + " child meals were ordered at $" + childPrice + " each.");
+        System.out.println("Total child meal profit: $" + String.format("%.2f", childProfit));
+
+        System.out.println("Grand total profit: $" + String.format("%.2f", grandTotalProfit));
+
+        // Close the Scanner object to avoid resource leaks
+        input.close();
+    }
+}
