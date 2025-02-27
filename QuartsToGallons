@@ -1,0 +1,12 @@
+public class QuartsToGallons {
+
+    public static void main(String[] args) {
+        final int QUARTS_PER_GALLON = 4; // Constant for quarts per gallon
+        int quartsNeeded = 18; // Number of quarts needed for the job
+
+        int gallons = quartsNeeded / QUARTS_PER_GALLON; // Calculate gallons
+        int remainingQuarts = quartsNeeded % QUARTS_PER_GALLON; // Calculate remaining quarts
+
+        System.out.println("A job that needs " + quartsNeeded + " quarts requires " + gallons + " gallons plus " + remainingQuarts + " quarts.");
+    }
+}
