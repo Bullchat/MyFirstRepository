@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class FixDebugTwo1 {
+   public static void main(String[] args) {
+      int oneInt;
+      double oneDouble;
+      String oneString;
+      Scanner input = new Scanner(System.in);
+
+      // Prompt for an integer and read it
+      System.out.print("Enter an integer >> ");
+      oneInt = input.nextInt();  // Correct method to read an integer
+
+      // Prompt for a double and read it
+      System.out.print("Enter a double >> ");
+      oneDouble = input.nextDouble();  // Correct method to read a double
+
+      // Consume the leftover newline character
+      input.nextLine();
+
+      // Prompt for a string and read it
+      System.out.print("Enter a string >> ");
+      oneString = input.nextLine();
+
+      // Display the results
+      System.out.print("The int is ");
+      System.out.println(oneInt);  // Fixed variable name
+      System.out.print("The double is ");  // Fixed string
+      System.out.println(oneDouble);
+      System.out.print("The String is ");
+      System.out.println(oneString);
+   }
+}
