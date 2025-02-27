@@ -1,0 +1,18 @@
+import javax.swing.*;
+
+class ChiliToGo {
+    public static void main(String[] args) {
+        int Adults_cost = 7;
+        int Kids_cost = 4;
+
+        int adult_meals = Integer.parseInt(JOptionPane.showInputDialog("Adult's Meals: "));
+        int child_meals = Integer.parseInt(JOptionPane.showInputDialog("Child's Meals: "));
+
+        int adult_meals_cost = adult_meals * Adults_cost;
+        int child_meals_cost = child_meals * Kids_cost;
+
+        JOptionPane.showMessageDialog(null, "Cost of Adult Meals: " + adult_meals_cost);
+        JOptionPane.showMessageDialog(null, "Cost of Child Meals: " + child_meals_cost);
+        JOptionPane.showMessageDialog(null, "Total Cost: " + (adult_meals_cost + child_meals_cost));
+    }
+}
