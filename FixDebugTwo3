@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class FixDebugTwo3
+{
+   public static void main(String args[])
+   {
+      int a, b;
+      int result, remainder;
+      Scanner input = new Scanner(System.in);
+      
+      System.out.print("Enter an integer >> ");
+      a = input.nextInt();  // Fix: Add parentheses for nextInt()
+      
+      System.out.print("Enter another integer >> ");
+      b = input.nextInt();  // Fix: Add parentheses for nextInt()
+      
+      result = a / b;  // Fix: Calculate quotient
+      remainder = a % b;  // Fix: Calculate remainder
+      
+      System.out.println("Divide " + a + " by " + b);
+      System.out.println("Result is " + result);  // Fix: Add missing semicolon
+      System.out.println("Remainder is " + remainder);
+   }
+}
