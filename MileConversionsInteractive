@@ -1,0 +1,23 @@
+import java.util.Scanner; 
+
+public class MileConversionsInteractive { 
+
+    public static void main(String[] args) { 
+        final int FEET_PER_MILE = 5280; 
+        final int INCHES_PER_MILE = 63360; 
+
+        Scanner input = new Scanner(System.in); 
+        
+        System.out.print("Enter the number of miles: "); 
+        double miles = input.nextDouble(); 
+
+        double feet = miles * FEET_PER_MILE; 
+        double inches = miles * INCHES_PER_MILE; 
+
+        System.out.printf("%.2f miles is equal to:\n", miles); 
+        System.out.printf("%.2f feet\n", feet); 
+        System.out.printf("%.2f inches\n", inches); 
+        
+        input.close(); // Close the scanner
+    } 
+}
