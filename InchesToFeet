@@ -1,0 +1,12 @@
+public class InchesToFeet {
+
+    public static void main(String[] args) {
+        final int INCHES_PER_FOOT = 12; // Constant for conversion
+        int inches = 86; // Length in inches
+
+        int feet = inches / INCHES_PER_FOOT; // Calculate feet
+        int remainingInches = inches % INCHES_PER_FOOT; // Calculate remaining inches 
+
+        System.out.println(inches + " inches is equal to " + feet + " feet and " + remainingInches + " inches.");
+    }
+}
