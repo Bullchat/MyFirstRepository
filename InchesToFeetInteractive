@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class InchesToFeetInteractive {
+
+    public static void main(String[] args) {
+        final int INCHES_PER_FOOT = 12; 
+        
+        // Create a Scanner object to read input
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Enter the length in inches: ");
+            int inches = input.nextInt(); 
+
+            // Calculate feet and remaining inches
+            int feet = inches / INCHES_PER_FOOT;
+            int remainingInches = inches % INCHES_PER_FOOT;
+
+            // Output the result
+            System.out.println(inches + " inches is equal to " + feet + " feet and " + remainingInches + " inches.");
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
+        }
+    }
+}
