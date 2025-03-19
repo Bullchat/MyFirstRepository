@@ -33,8 +33,8 @@ class PaintCalculator {
             //calculate wall area and store the value in variable wallArea
             wallArea = 2 * (length + width) * height;
             
-            //send this wallArea as parameter to ClaculatePaintQty() method that calculates and returns the quantity of paint in gallons 
-            paintQuantity = ClaculatePaintQty(wallArea);
+            //send this wallArea as parameter to CalculatePaintQty() method that calculates and returns the quantity of paint in gallons 
+            paintQuantity = CalculatePaintQty(wallArea);
             
             //print the paint Quantity
             System.out.println("For a room of height " + height + "feet, length " +
@@ -47,7 +47,7 @@ class PaintCalculator {
             //return price to the calling function
             return price;
     }
-    public static double ClaculatePaintQty(double wallArea){
+    public static double CalculatePaintQty(double wallArea){
         double paintQuantity = wallArea/350;
         return paintQuantity;
     }
