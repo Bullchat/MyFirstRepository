@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class DebugThree3fix {
+   public static void main(String args[]) {
+      // Declare a variable to hold the user's name
+      String name;
+      
+      // Get the user's name
+      name = getName();  // Fixed the missing semicolon and corrected method call
+      
+      // Display a greeting message
+      displayGreeting(name);  // Fixed the typo "namme" to "name"
+   }
+
+   // Method to get the user's name
+   public static String getName() {
+      String name;
+      Scanner input = new Scanner(System.in);
+      
+      // Prompt the user for their name
+      System.out.print("Enter name: ");  // Fixed "System.in.print" to "System.out.print"
+      
+      // Read the name entered by the user
+      name = input.nextLine();  // Fixed "nexlLine" to "nextLine"
+      
+      // Return the entered name
+      return name;  // Fixed the typo "namer" to "name"
+   }
+
+   // Method to display a greeting message
+   public static void displayGreeting(String name) {
+      // Display a greeting with the user's name
+      System.out.println("Hello, " + name + "!");  // Fixed "System.outprintln" to "System.out.println"
+   }
+}
