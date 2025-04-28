@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class FormLetterWriter {
+    
+    // Method to display salutation with first name only
+    public void displaySalutation(String firstName) {
+        System.out.println("Dear " + firstName + ",");
+        System.out.println("Thank you for your recent order.");
+    }
+
+    // Overloaded method to display salutation with first and last name
+    public void displaySalutation(String firstName, String lastName) {
+        System.out.println("Dear " + firstName + " " + lastName + ",");
+        System.out.println("Thank you for your recent order.");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Create an object of FormLetterWriter class
+        FormLetterWriter writer = new FormLetterWriter();
+        
+        // Prompt the user for first and last names
+        System.out.print("Enter your first name: ");
+        String firstName = scanner.nextLine();
+        
+        System.out.print("Enter your last name: ");
+        String lastName = scanner.nextLine();
+        
+        // Test the first overloaded method
+        System.out.println("\nUsing first method (with first name):");
+        writer.displaySalutation(firstName);
+        
+        // Test the second overloaded method
+        System.out.println("\nUsing second method (with first and last name):");
+        writer.displaySalutation(firstName, lastName);
+        
+        scanner.close();
+    }
+}
