@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class DebugThree2fix
+ {
+   public static void main(String args[]) {
+      int a, b, c; // Declare a, b, c
+      Scanner input = new Scanner(System.in);
+      
+      // Get input for three integers
+      System.out.print("Enter an integer >> ");
+      a = input.nextInt();  // Store input for 'a'
+      
+      System.out.print("Enter a second integer >> ");
+      b = input.nextInt();  // Store input for 'b'
+      
+      System.out.print("Enter a third integer >> ");
+      c = input.nextInt();  // Store input for 'c'
+      
+      // Call the add and subtract methods with the correct parameters
+      add(a, b);
+      add(b, c);
+      add(a, c);
+      
+      subtract(a, b);
+      subtract(b, c);
+      subtract(a, c);
+   }
+   
+   // Method to add two integers
+   public static void add(int a, int b) {
+      // Correct the sum to be calculated, not concatenated
+      System.out.println("The sum of " + a + " and " + b + " is " + (a + b));
+   }
+   
+   // Method to subtract two integers
+   public static void subtract(int a, int b) {
+      // Fix the string concatenation and calculation of subtraction
+      System.out.println("The difference between " + a + " and " + b + " is " + (a - b));
+   }
+}
