@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class DebugSix3 {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        int userNum, val;
+        final int MIN = 1;
+        final int MAX = 20;
+        final int TIME_WASTER = 100000;
+
+        // Prompt the user for input
+        System.out.print("Enter a number between " + MIN + " and " + MAX + " >> ");
+        userNum = keyboard.nextInt();
+
+        // Validate user input to ensure it's within the specified range
+        while (userNum < MIN || userNum > MAX) {
+            System.out.println("Number out of range");
+            System.out.print("Enter a number between " + MIN + " and " + MAX + " inclusive >> ");
+            userNum = keyboard.nextInt();
+        }
+
+        // Countdown loop from the user's number to 0
+        for (val = userNum; val >= 0; --val) {
+            System.out.print(val + "  ");
+            // Time-wasting loop for delay (simulated delay for demonstration)
+            for (int x = 0; x < TIME_WASTER; ++x)
+                for (int y = 0; y < TIME_WASTER; ++y)
+                    for (int z = 0; z < TIME_WASTER; ++z);
+        }
+
+        // Print "Blastoff!" after the countdown
+        System.out.println("Blastoff!");
+    }
+}
