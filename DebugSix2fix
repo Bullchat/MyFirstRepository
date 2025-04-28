@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class DebugSix2 {
+   public static void main(String args[]) {
+      Scanner keyboard = new Scanner(System.in);
+      char letter;
+      int a;
+      final int MAX = 122;
+      final int NUMBERLINE = 20;
+      int count = 0;  // Counter to keep track of characters printed on the current line
+
+      System.out.println("Enter a Unicode value to start.");
+      System.out.print("For example, A is 65 >> ");
+      int min = keyboard.nextInt();
+
+      // Loop through Unicode values from the user input to 122 (MAX)
+      for (a = min; a <= MAX; a++) {
+         letter = (char) a;
+         System.out.print("  " + letter);
+
+         // Increment count and check if we've printed 20 characters
+         count++;
+         if (count == NUMBERLINE) {
+            System.out.println();  // Start a new line
+            count = 0;  // Reset count
+         }
+      }
+
+      System.out.println("\nEnd of application");
+   }
+}
