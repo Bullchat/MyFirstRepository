@@ -1,0 +1,37 @@
+// Displays the mid-point between 
+// (and including) user-specified values
+import java.util.Scanner;
+
+public class DebugSix4 {
+   public static void main(String[] args) {
+      int high, low;
+      int howManyBetween;
+      double half, midPoint;
+      Scanner input = new Scanner(System.in);
+
+      // Prompt user for the low value
+      System.out.print("Enter a number >> ");
+      low = input.nextInt();  // Fix: changed inputnextInt() to input.nextInt()
+
+      // Prompt user for the high value
+      System.out.print("Enter a larger number >> ");
+      high = input.nextInt();
+
+      // Ensure high is larger than low
+      while (low >= high) {
+         System.out.println("The number you entered for a high number, " +
+            high + ", is not more than " + low);
+         System.out.print("Enter a number higher than " + low + " >> ");
+         high = input.nextInt();
+      }
+
+      // Calculate the midpoint
+      howManyBetween = high - low;
+      half = howManyBetween / 2.0;  // Fix: divide by 2.0 to get a proper double result
+      midPoint = low + half;
+
+      // Output the result
+      System.out.println(midPoint + " is halfway between " +
+         low + " and " + high);
+   }
+}
