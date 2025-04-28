@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class EvenEntryLoop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int userInput;
+
+        // Start the loop
+        while (true) {
+            System.out.print("Please enter an even number or 999 to stop: ");
+            userInput = scanner.nextInt();
+            
+            // Check if the sentinel value (999) is entered
+            if (userInput == 999) {
+                System.out.println("Program terminated.");
+                break; // Exit the loop
+            }
+            
+            // Check if the number is even or odd
+            if (userInput % 2 == 0) {
+                System.out.println("Good job!");
+            } else {
+                System.out.println("Error: This is not an even number. Try again.");
+            }
+        }
+
+        scanner.close(); // Close the scanner
+    }
+}
