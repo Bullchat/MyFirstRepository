@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class BookBilling {
+
+    // Method 1: Computes the price for one photo book
+    public double computeBill() {
+        double price = 14.99;
+        double taxRate = 0.08;  // 8% tax
+        double total = price + (price * taxRate);
+        return total;
+    }
+
+    // Method 2: Computes the price based on the quantity ordered
+    public double computeBill(int quantity) {
+        double price = 14.99;
+        double taxRate = 0.08;  // 8% tax
+        double total = quantity * price + (quantity * price * taxRate);
+        return total;
+    }
+
+    // Method 3: Computes the price based on the quantity ordered and coupon value
+    public double computeBill(int quantity, double couponValue) {
+        double price = 14.99;
+        double taxRate = 0.08;  // 8% tax
+        double totalBeforeTax = quantity * price - couponValue;
+        double total = totalBeforeTax + (totalBeforeTax * taxRate);
+        return total;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        BookBilling bookBilling = new BookBilling();
+
+        // Prompt the user for the number of books ordered
+        System.out.print("Enter the number of books ordered: ");
+        int quantity = scanner.nextInt();
+
+        // Prompt the user for the coupon value
+        System.out.print("Enter the coupon value: ");
+        double couponValue = scanner.nextDouble();
+
+        // Test all three overloaded methods
+        System.out.println("Total for 1 book (no parameters): $" + bookBilling.computeBill());
+        System.out.println("Total for " + quantity + " books (with quantity parameter): $" + bookBilling.computeBill(quantity));
+        System.out.println("Total for " + quantity + " books with a coupon of $" + couponValue + ": $" + bookBilling.computeBill(quantity, couponValue));
+
+        scanner.close();
+    }
+}
