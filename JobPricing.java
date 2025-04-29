@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main
+public class JobPricing
 {
 	public static void main(String[] args) {
 		String description;
