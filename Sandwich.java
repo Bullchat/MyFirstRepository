@@ -1,29 +1,22 @@
 public class Sandwich {
-    private String mainIngredient; 
-    private String breadType;    
-    private double price;      
-    public Sandwich(String mainIngredient, String breadType, double price) {
-        this.mainIngredient = mainIngredient;
-        this.breadType = breadType;
-        this.price = price;
-    }
-    public String getMainIngredient() {
-        return mainIngredient;
-    }
-    public void setMainIngredient(String mainIngredient) {
-        this.mainIngredient = mainIngredient;
-    }
-    public String getBreadType() {
-        return breadType;
+    String mainIngredient;
+    String breadType;
+    double price;
+
+    public Sandwich(String mainIngredientParam, String breadTypeParam, double priceParam) {
+        mainIngredient = mainIngredientParam;
+        breadType = breadTypeParam;
+        price = priceParam;
     }
 
-    public void setBreadType(String breadType) {
-        this.breadType = breadType;
+    public void displayInfo() {
+        System.out.println("Main Ingredient: " + mainIngredient);
+        System.out.println("Bread Type: " + breadType);
+        System.out.println("Price: $" + price);
     }
-    public double getPrice() {
-        return price;
-    }
-    public void setPrice(double price) {
-        this.price = price;
+
+    public static void main(String[] args) {
+        Sandwich sandwich = new Sandwich("Ham", "White", 4.50);
+        sandwich.displayInfo();
     }
 }
