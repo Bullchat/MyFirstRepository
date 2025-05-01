@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class RandomGuessMatchWithMethods {
+    public static void main(String[] args) {
+        final int MIN = 1;
+        final int MAX = 10;
+
+        int random = MIN + (int)(Math.random() * MAX);
+        int userGuess = getUserGuess(MIN, MAX);
+        boolean isCorrect = (userGuess == random);
+
+        displayResults(random, userGuess, isCorrect);
+    }
+
+    public static int getUserGuess(int min, int max) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Guess a number between " + min + " and " + max + ": ");
+        int guess = input.nextInt();
+        return guess;
+    }
+
+    public static void displayResults(int random, int guess, boolean isCorrect) {
+        System.out.println("Random number: " + random);
+        System.out.println("Your guess: " + guess);
+        System.out.println("Correct guess? " + isCorrect);
+        System.out.println("You were off by: " + Math.abs(random - guess));
+    }
+}
