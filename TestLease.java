@@ -1,93 +1,73 @@
 import java.util.Scanner;
 
-class Lease {
-    // Fields
-    private String tenantName;
-    private double rent;
-    private boolean hasPets;
-    private double petFee;
-
-    // Default constructor
-    public Lease() {
-        tenantName = "Default Tenant";
-        rent = 1000.00; // Default rent
-        hasPets = false;
-        petFee = 0.00;
-    }
-
-    // Parameterized constructor
-    public Lease(String tenantName, double rent, boolean hasPets) {
-        this.tenantName = tenantName;
-        this.rent = rent;
-        this.hasPets = hasPets;
-        this.petFee = hasPets ? 100.00 : 0.00; // If tenant has pets, add a pet fee
-    }
-
-    // Method to get data from the user
-    public static Lease getData() {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter tenant name: ");
-        String tenantName = scanner.nextLine();
-        
-        System.out.print("Enter rent amount: ");
-        double rent = scanner.nextDouble();
-        
-        System.out.print("Does the tenant have pets? (true/false): ");
-        boolean hasPets = scanner.nextBoolean();
-        
-        return new Lease(tenantName, rent, hasPets);
-    }
-
-    // Method to display lease values
-    public void showValues() {
-        System.out.println("Tenant Name: " + tenantName);
-        System.out.println("Rent: $" + rent);
-        System.out.println("Has Pets: " + (hasPets ? "Yes" : "No"));
-        System.out.println("Pet Fee: $" + petFee);
-    }
-
-    // Method to add a pet fee to rent
-    public void addPetFee() {
-        if (hasPets && petFee > 0) {
-            rent += petFee;
-            System.out.println("Pet fee of $" + petFee + " has been added to the rent.");
-        }
-    }
-}
-
 public class TestLease {
     public static void main(String[] args) {
-        // Create four Lease objects
+        // Declare four Lease objects
         Lease lease1, lease2, lease3, lease4;
 
-        // Get lease data from the user and assign to lease1, lease2, and lease3
-        lease1 = Lease.getData();
-        lease2 = Lease.getData();
-        lease3 = Lease.getData();
+        // Initialize lease1, lease2, and lease3 using the getData() method
+        lease1 = getData();
+        lease2 = getData();
+        lease3 = getData();
 
-        // Fourth Lease object will have default values
+        // Initialize lease4 using the default constructor
         lease4 = new Lease();
 
-        // Display lease1 details
-        System.out.println("\nShowing initial lease1 values:");
-        lease1.showValues();
+        // Display the data for lease1
+        showValues(lease1);
 
-        // Add pet fee to lease1 and display updated values
+        // Add a pet fee and show the explanation
         lease1.addPetFee();
 
-        // Show updated lease1 values
-        System.out.println("\nAfter adding pet fee to lease1:");
-        lease1.showValues();
+        // Display the updated data for lease1
+        System.out.println("\nAfter adding the pet fee:");
+        showValues(lease1);
 
-        // Display values for lease2, lease3, and lease4
-        System.out.println("\nLease2 details:");
-        lease2.showValues();
+        // Show values for the other three Lease objects (lease2, lease3, and lease4)
+        System.out.println("\nLease 2 values:");
+        showValues(lease2);
 
-        System.out.println("\nLease3 details:");
-        lease3.showValues();
+        System.out.println("\nLease 3 values:");
+        showValues(lease3);
 
-        System.out.println("\nLease4 details (should show default values):");
-        lease4.showValues();
+        System.out.println("\nLease 4 values (using default constructor):");
+        showValues(lease4);
+    }
+
+    // Method to prompt user for input and return a newly constructed Lease object
+    public static Lease getData() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create a new Lease object
+        Lease lease = new Lease();
+
+        // Get the tenant's name
+        System.out.print("Enter tenant name: ");
+        lease.setTenantName(scanner.nextLine());
+
+        // Get the apartment number
+        System.out.print("Enter apartment number: ");
+        lease.setApartmentNumber(scanner.nextInt());
+
+        // Get the monthly rent
+        System.out.print("Enter monthly rent: ");
+        lease.setMonthlyRent(scanner.nextDouble());
+
+        // Get the lease term in months
+        System.out.print("Enter lease term in months: ");
+        lease.setLeaseTerm(scanner.nextInt());
+
+        // Consume the leftover newline character
+        scanner.nextLine();
+
+        return lease;
+    }
+
+    // Method to display the values of a Lease object
+    public static void showValues(Lease lease) {
+        System.out.println("Tenant Name: " + lease.getTenantName());
+        System.out.println("Apartment Number: " + lease.getApartmentNumber());
+        System.out.println("Monthly Rent: $" + lease.getMonthlyRent());
+        System.out.println("Lease Term: " + lease.getLeaseTerm() + " months");
     }
 }
