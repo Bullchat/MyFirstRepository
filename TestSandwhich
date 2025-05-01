@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class TestSandwhich {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter main ingredient: ");
+        String mainIngredient = scanner.nextLine();
+
+        System.out.print("Enter bread type: ");
+        String breadType = scanner.nextLine();
+
+        System.out.print("Enter price: ");
+        double price = scanner.nextDouble();
+
+        System.out.println("\n--- Sandwich Details ---");
+        System.out.println("Main Ingredient: " + mainIngredient);
+        System.out.println("Bread Type: " + breadType);
+        System.out.println("Price: $" + price);
+
+        scanner.close();
+    }
+}
