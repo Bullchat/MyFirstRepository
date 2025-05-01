@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class MadLibWithMethod {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask user for input
+        System.out.print("Enter the name of an animal: ");
+        String animal = scanner.nextLine();
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.nextLine(); // consume newline
+
+        System.out.print("Enter a direction (e.g., north, south, east, west): ");
+        String direction = scanner.nextLine();
+
+        // Call method to display story
+        displayMadLib(animal, number, direction);
+    }
+
+    // Method to generate and display the Mad Lib story
+    public static void displayMadLib(String animal, int number, String direction) {
+        System.out.println("\nHere is your Mad Lib story:");
+        System.out.println("The clock struck " + number + ".");
+        System.out.println("The " + animal + " ran " + direction + ".");
+        System.out.println("Hickory Dickory Dock.");
+    }
+}
