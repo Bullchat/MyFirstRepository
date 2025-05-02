@@ -1,0 +1,62 @@
+// Lease.java
+
+public class Lease {
+    // Fields
+    private String tenantName;
+    private int apartmentNumber;
+    private double monthlyRent;
+    private int leaseTerm;
+
+    // Default constructor
+    public Lease() {
+        tenantName = "XXX";
+        apartmentNumber = 0;
+        monthlyRent = 1000.0;
+        leaseTerm = 12;
+    }
+
+    // Getters
+    public String getTenantName() {
+        return tenantName;
+    }
+
+    public int getApartmentNumber() {
+        return apartmentNumber;
+    }
+
+    public double getMonthlyRent() {
+        return monthlyRent;
+    }
+
+    public int getLeaseTerm() {
+        return leaseTerm;
+    }
+
+    // Setters
+    public void setTenantName(String tenantName) {
+        this.tenantName = tenantName;
+    }
+
+    public void setApartmentNumber(int apartmentNumber) {
+        this.apartmentNumber = apartmentNumber;
+    }
+
+    public void setMonthlyRent(double monthlyRent) {
+        this.monthlyRent = monthlyRent;
+    }
+
+    public void setLeaseTerm(int leaseTerm) {
+        this.leaseTerm = leaseTerm;
+    }
+
+    // Method to add pet fee
+    public void addPetFee() {
+        monthlyRent += 10.0;
+        explainPetPolicy();
+    }
+
+    // Static method to explain pet policy
+    public static void explainPetPolicy() {
+        System.out.println("A $10 monthly fee is added for tenants with pets.");
+    }
+}
