@@ -1,1 +1,52 @@
+// DistanceFromAverage.java
+// Author: Henry 313 271 4848
+// This program allows a user to enter up to 15 double values and calculates their average and distances from it.
 
+import java.util.Scanner; // Import the Scanner class for reading user input
+
+public class DistanceFromAverage {
+    public static void main(String[] args) {
+        final int MAX_NUMBERS = 15;        // Maximum number of inputs allowed
+        final double SENTINEL = 99999;     // Sentinel value to end input early
+        double[] numbers = new double[MAX_NUMBERS]; // Array to store user-entered values
+        int count = 0;                     // Counter for the number of valid inputs
+        double sum = 0;                    // Sum of entered numbers
+
+        Scanner input = new Scanner(System.in); // Create Scanner object for input
+
+        System.out.println("Enter up to 15 double values. Enter 99999 to quit.");
+
+        // Loop to collect user input, up to 15 values or until sentinel is entered
+        while (count < MAX_NUMBERS) {
+            System.out.print("Enter value #" + (count + 1) + ": "); // Prompt user
+            double userInput = input.nextDouble(); // Read input
+
+            if (userInput == SENTINEL) { // Check for sentinel to break early
+                break;
+            }
+
+            numbers[count] = userInput; // Store valid input in array
+            sum += userInput;           // Add input to sum
+            count++;                    // Increment valid input count
+        }
+
+        // If no values were entered, display error message
+        if (count == 0) {
+            System.out.println("Error: No numbers were entered.");
+        } else {
+            double average = sum / count; // Calculate average of entered numbers
+            System.out.println("\nYou entered " + count + " number(s).");
+            System.out.printf("Average: %.2f\n", average); // Display average
+
+            System.out.println("Values and their distance from the average:");
+
+            // Loop through entered values and compute distance from average
+            for (int i = 0; i < count; i++) {
+                double distance = Math.abs(numbers[i] - average); // Absolute difference
+                System.out.printf("Value: %.2f, Distance from average: %.2f\n", numbers[i], distance);
+            }
+        }
+
+        input.close(); // Close the Scanner to release resources
+    }
+}
